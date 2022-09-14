@@ -1,0 +1,16 @@
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentity
+metadata:
+  name: "aks-kv-identity"               
+spec:
+  type: 0                                 
+  resourceID: /subscriptions/<subscription id>/resourcegroups/aks2akvrg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/aks2kvIdentity
+  clientID: "<clientId>"
+---
+apiVersion: aadpodidentity.k8s.io/v1
+kind: AzureIdentityBinding
+metadata:
+  name: azure-pod-identity-binding
+spec:
+  azureIdentity: "aks-kv-identity"      
+  selector: azure-pod-identity-binding-selector
