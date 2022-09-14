@@ -146,7 +146,7 @@ We have the AAD pod identity helm chart installed and the Managed Identity creat
 
 You can get the subscriptionId with echo $subId and the clientId with echo $clientId if you followed the last commands showed in the gists.
 
-**See aks-kv-identity.yml file. Subtitute needed placeholders**.
+**See [aks-kv-identity.yml](https://github.com/Ivan-Nikov/azure-kubernetes-service-demo/blob/main/aks-kv-identity.yml) file. Subtitute needed placeholders**.
 
 You can see that within the Azure Identity Binding manifest we reference our Managed Identity and we specify a selector. The selector will be used for pods that should be able to actually use the Managed Identity in order to authenticate against the Key Vault through the AAD.
 
@@ -158,7 +158,7 @@ If you followed all the steps and everything went fine, congratulations on compl
 
 We created all the required components for the integration of Key Vault with Kubernetes. Now it’s time to actually grab secrets from the Key Vault. We have to be explicit here and create a Secret Provider Class, where we define all the secrets we need to import from the Key Vault.
 
-**See secrets-provider.yml**
+**See [secrets-provider.yml](https://github.com/Ivan-Nikov/azure-kubernetes-service-demo/blob/main/secrets-provider.yml)**
 
 Note that the < tenant id > should reference the **tenantId** of the Key Vault. You can retrieve it using this command: 
 
@@ -176,7 +176,7 @@ Substitute placeholders where needed!
 ### **Mount Secrets into Application**
 By deploying the Secret Provider Class, the secrets will not be created in Kubernetes yet. This will only happen with the first pod, which mounts a volume utilizing CSI and referencing our Secret Provider Class. Also, the pod must make use of the selector that we specified in the Azure Identity Binding.
 
-**See the pod definition in inject-secrets-from-akv.yml**
+**See the pod definition in [inject-secrets-from-akv.yml](https://github.com/Ivan-Nikov/azure-kubernetes-service-demo/blob/main/inejct-secrets-from-akv.yml)**
 
 After substituting placeholders.
 
