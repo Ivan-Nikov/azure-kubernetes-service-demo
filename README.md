@@ -47,7 +47,7 @@ Now we are good to go and create a simply configured Kubernetes cluster.
 Make sure your kubeconfig file context is connected before proceeding with the rest of the commands.
 You'll need to re-open the connection when exiting the command line/power shell/terminal
 
-The listed commands will create a resource group named aks2akvrg in the eastus region and a Kubernetes cluster inside. The Kubernetes cluster is named myk8s and contains 1 worker node. The last command will prepare your kubectl to be connected to the freshly created myk8s Kubernetes cluster.
+The listed commands will create a resource group named aks2akvrg in the northeurope region and a Kubernetes cluster inside. The Kubernetes cluster is named myk8s and contains 1 worker node. The last command will prepare your kubectl to be connected to the freshly created myk8s Kubernetes cluster.
 
 ### **Create an Azure Key Vault**
 Next, we will create an Azure Key Vault and already add a secret. Therefore we need the following commands.
