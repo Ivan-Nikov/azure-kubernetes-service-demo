@@ -19,11 +19,11 @@ We will go through the process of utilizing the best of all involved technologie
 Here are some prerequisites that you will need to walk through the whole process:
 
 * Get an Azure Subscription where you have a global admin role
-* Azure CLI installed
+* Install Azure CLI
 * Install Chocolatey
-* kubectl installed
-* helm3 installed
-* jq installed
+* Install kubectl
+* Install helm3
+* Install jq
 
 ### **Create an AKS instance**
 
